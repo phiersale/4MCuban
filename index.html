@@ -24,6 +24,7 @@
             font-size: 1.1em;
             border-bottom: 3px solid #e67e22;
             animation: gentle-pulse 3s infinite;
+            line-height: 1.3;
         }
         
         @keyframes gentle-pulse {
@@ -252,31 +253,58 @@
         
         @media (max-width: 480px) {
             .section {
-                padding: 40px 15px;
+                padding: 40px 10px;
             }
             
             .chart-container {
-                padding: 20px;
+                padding: 15px;
                 margin: 20px 0;
             }
             
             .chart-wrapper {
                 height: 300px;
             }
+            
+            .interactive-notice {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+            
+            .hero-title {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="interactive-notice">
-        📊 INTERACTIVE PRESENTATION - Tap charts to explore data • Scroll down for full analysis
+        📊 INTERACTIVE PRESENTATION - Tap charts to explore data • Scroll down for full analysis<br>
+        📱 <em>Mobile tip: Zoom out (pinch) if charts appear cut off</em><br>
+        📄 <strong>This visual summary accompanies the detailed Google Doc business proposal</strong>
     </div>
 
     <div class="hero-section">
-        <div class="hero-title">🚨 AMERICA'S LAST HOPE 🚨</div>
+        <div class="hero-title">🚨<br>AMERICA'S LAST HOPE</div>
         <div class="hero-subtitle">Cuban + PHIERS Save 100M+ Americans from Healthcare Crisis</div>
         <div class="crisis-alert">
             ⚠️ CONSERVATIVE PROJECTIONS - STILL WILDLY PROFITABLE ⚠️<br>
             Government failing 150M+ Americans → Healthcare unaffordable → Only viable alternative solution exists
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="chart-container" style="background: rgba(56, 161, 105, 0.95); border-color: #38a169;">
+            <h3 style="text-align: center; color: white; font-size: 1.8em; margin-bottom: 20px;">
+                🎯 THE CUSTOMER ACQUISITION STRATEGY
+            </h3>
+            <div style="color: white; font-size: 1.2em; line-height: 1.5; text-align: center; max-width: 800px; margin: 0 auto;">
+                <p><strong>PHIERS drives 100M+ exclusive customers to Cost Plus platform</strong></p>
+                <p>• FREE insurance for members = massive customer loyalty</p>
+                <p>• ALL medications purchased exclusively through Cost Plus</p>
+                <p>• CMS saves $100B+ annually through our drug savings</p>
+                <p>• PHIERSale marketplace captures government contracts for documented savings</p>
+                <p><strong>Result: Largest customer acquisition in business history + guaranteed revenue stream</strong></p>
+            </div>
         </div>
     </div>
 
@@ -338,6 +366,13 @@
                 </div>
             </div>
             <div class="tap-notice">💡 Compare costs by tapping chart sections</div>
+            <div style="background: rgba(43, 119, 173, 0.1); padding: 20px; border-radius: 10px; margin-top: 20px; color: #2d3748;">
+                <h4 style="color: #2b77ad; margin-bottom: 15px; text-align: center;">How CMS Savings Get Captured:</h4>
+                <p style="margin: 8px 0; font-size: 1.1em;"><strong>1. Members save $1,080/month</strong> using Cost Plus vs traditional pharmacies</p>
+                <p style="margin: 8px 0; font-size: 1.1em;"><strong>2. CMS saves $100B+ annually</strong> when their beneficiaries use our system</p>
+                <p style="margin: 8px 0; font-size: 1.1em;"><strong>3. PHIERSale marketplace captures government contracts</strong> for documented savings</p>
+                <p style="margin: 8px 0; font-size: 1.1em;"><strong>4. Revenue funds expansion</strong> while Cuban gets exclusive customer base</p>
+            </div>
         </div>
     </div>
 
@@ -444,7 +479,7 @@
                         y: {
                             beginAtZero: true,
                             title: { display: true, text: 'Americans Served (Millions)', color: '#38a169', font: { size: 14, weight: 'bold' }},
-                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M SERVED'; }}
+                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
                         },
                         y1: {
                             type: 'linear',
@@ -521,7 +556,7 @@
             new Chart(ctx4, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Insurance $500', 'Drugs $400', 'Copays $200', 'Other $300'],
+                    labels: ['Insurance', 'Drugs', 'Copays', 'Other Costs'],
                     datasets: [{
                         data: [500, 400, 200, 300],
                         backgroundColor: ['#e53e3e', '#c53030', '#9c1c1c', '#742a2a'],
@@ -534,7 +569,52 @@
                     maintainAspectRatio: false,
                     plugins: {
                         title: { display: true, text: '$1,400/month', font: { size: 16, weight: 'bold' }, color: '#e53e3e' },
-                        legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }}
+                        legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }},
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': 
+
+            // Jobs Chart - Conservative
+            const ctx6 = document.getElementById('jobChart').getContext('2d');
+            new Chart(ctx6, {
+                type: 'bar',
+                data: {
+                    labels: ['Healthcare\nInfrastructure', 'Economic\nDevelopment', 'Essential\nServices', 'Member\nSupport'],
+                    datasets: [{
+                        label: 'Jobs Created (Millions)',
+                        data: [10, 15, 10, 5],
+                        backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
+                        borderRadius: 12
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true,
+                            title: { display: true, text: 'Jobs Created (Millions)', color: '#2b77ad', font: { weight: 'bold' }},
+                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M Jobs'; }}
+                        },
+                        x: { 
+                            title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
+                            ticks: { color: '#2d3748', font: { size: 10 }}
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> + context.parsed + '/month';
+                                }
+                            }
+                        }
                     }
                 }
             });
@@ -543,7 +623,7 @@
             new Chart(ctx5, {
                 type: 'doughnut',
                 data: {
-                    labels: ['FREE Insurance', 'Cost Plus $120', 'Benefits $200', 'Savings $1,080'],
+                    labels: ['FREE Insurance', 'Cost Plus Drugs', 'Member Benefits', 'Monthly Savings'],
                     datasets: [{
                         data: [0, 120, 200, 1080],
                         backgroundColor: ['#38a169', '#48bb78', '#68d391', '#9ae6b4'],
@@ -556,7 +636,55 @@
                     maintainAspectRatio: false,
                     plugins: {
                         title: { display: true, text: '$320/month', font: { size: 16, weight: 'bold' }, color: '#38a169' },
-                        legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }}
+                        legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }},
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    if (context.label === 'FREE Insurance') {
+                                        return 'FREE Insurance (normally $500)';
+                                    }
+                                    return context.label + ': 
+
+            // Jobs Chart - Conservative
+            const ctx6 = document.getElementById('jobChart').getContext('2d');
+            new Chart(ctx6, {
+                type: 'bar',
+                data: {
+                    labels: ['Healthcare\nInfrastructure', 'Economic\nDevelopment', 'Essential\nServices', 'Member\nSupport'],
+                    datasets: [{
+                        label: 'Jobs Created (Millions)',
+                        data: [10, 15, 10, 5],
+                        backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
+                        borderRadius: 12
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true,
+                            title: { display: true, text: 'Jobs Created (Millions)', color: '#2b77ad', font: { weight: 'bold' }},
+                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M Jobs'; }}
+                        },
+                        x: { 
+                            title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
+                            ticks: { color: '#2d3748', font: { size: 10 }}
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> + context.parsed + '/month';
+                                }
+                            }
+                        }
                     }
                 }
             });
