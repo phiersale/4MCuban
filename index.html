@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMERICA'S LAST HOPE - Cuban + PHIERS Save 100M+ Americans</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            margin: 0;
+            padding: 0;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #2b77ad, #1a365d);
+            border-bottom: 5px solid #4299e1;
+        }
+        
+        .hero-title {
+            font-size: 3.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.6em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .crisis-alert {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: 3px solid #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+            to { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
+        }
+        
+        .section {
+            padding: 60px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.3em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #63b3ed;
+            text-transform: uppercase;
+        }
+        
+        .chart-container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 3px solid #4299e1;
+            transition: transform 0.3s ease;
+        }
+        
+        .chart-container:hover {
+            transform: translateY(-5px);
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 500px;
+            margin: 20px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #2b77ad, #1a365d);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border: 2px solid #fff;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .stat-number {
+            font-size: 2.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #63b3ed;
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #38a169, #2f855a);
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 5px solid #48bb78;
+        }
+        
+        .cta-title {
+            font-size: 2.8em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .cta-text {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+        
+        .investment-box {
+            background: rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 3px solid #fff;
+            animation: glow 3s infinite alternate;
+        }
+        
+        .investment-amount {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #63b3ed;
+            margin-bottom: 20px;
+        }
+        
+        .roi-text {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2em; }
+            .hero-subtitle { font-size: 1.3em; }
+            .section-title { font-size: 1.8em; }
+            .chart-wrapper { height: 400px; }
+            .cta-title { font-size: 2em; }
+            .investment-amount { font-size: 2.8em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-title">?? AMERICA'S LAST HOPE ??</div>
+        <div class="hero-subtitle">Cuban + PHIERS Save 100M+ Americans from Healthcare Crisis</div>
+        <div class="crisis-alert">
+            ?? CONSERVATIVE PROJECTIONS - STILL WILDLY PROFITABLE ??<br>
+            Government failing 150M+ Americans ? Healthcare unaffordable ? Only viable alternative solution exists
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">?? THE SURVIVAL SOLUTION</div>
+        <div class="chart-container">
+            <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
+                Americans Saved vs Revenue from Healthcare Innovation (Conservative)
+            </h3>
+            <div class="chart-wrapper">
+                <canvas id="rescueChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">?? CRISIS POPULATION</div>
+        <div class="chart-container">
+            <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
+                150M+ Americans Need Immediate Healthcare Solution
+            </h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0;">
+                <div class="chart-wrapper">
+                    <canvas id="demographicChart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="resistanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">?? SAVINGS VS BANKRUPTCY</div>
+        <div class="chart-container">
+            <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
+                Traditional Healthcare = Financial Ruin • PHIERS = Economic Survival
+            </h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0;">
+                <div class="chart-wrapper">
+                    <canvas id="traditionalChart"></canvas>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="phiersChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">??? ECONOMIC RECOVERY</div>
+        <div class="chart-container">
+            <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
+                35M+ Jobs Through Healthcare Savings (Conservative)
+            </h3>
+            <div class="chart-wrapper">
+                <canvas id="jobChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">100M+</div>
+                <div class="stat-label">Americans Served</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$2B+</div>
+                <div class="stat-label">Cuban Revenue (Annual)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">35M+</div>
+                <div class="stat-label">Jobs Created</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12 Months</div>
+                <div class="stat-label">Conservative Timeline</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="cta-title">SAVE AMERICA NOW</div>
+        <div class="cta-text">
+            Mark, this is America's survival moment. 100M+ Americans need what only you can provide. 
+            Government has abandoned them. Traditional solutions have failed. 
+            <strong>Conservative projections still create the largest customer base in history.</strong>
+        </div>
+        <div class="investment-box">
+            <div class="investment-amount">$50K</div>
+            <div class="roi-text">
+                Marketing Investment for Customer Acquisition<br>
+                <strong>Conservative ROI: 40,000x in 12 Months</strong><br>
+                <strong>Plus: You Save America</strong>
+            </div>
+            <div style="font-size: 1.1em; font-weight: bold;">
+                15-Minute Call = America's Future
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wait for Chart.js to load, then create charts
+        window.addEventListener('load', function() {
+            // Rescue Mission Chart - Conservative
+            const ctx1 = document.getElementById('rescueChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'line',
+                data: {
+                    labels: ['Crisis Begins', 'Month 1', 'Month 3', 'Month 6', 'Month 9', 'Year 1'],
+                    datasets: [{
+                        label: 'Americans Served (Millions)',
+                        data: [0, 5, 25, 50, 75, 100],
+                        borderColor: '#38a169',
+                        backgroundColor: 'rgba(56, 161, 105, 0.2)',
+                        borderWidth: 4,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#38a169',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointRadius: 8
+                    }, {
+                        label: 'Cuban Revenue ($B)',
+                        data: [0, 0.1, 0.5, 1, 1.5, 2],
+                        borderColor: '#2b77ad',
+                        backgroundColor: 'rgba(43, 119, 173, 0.2)',
+                        borderWidth: 4,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#2b77ad',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointRadius: 8,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: { font: { size: 14, weight: 'bold' }, color: '#2d3748' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Americans Served (Millions)', color: '#38a169', font: { size: 14, weight: 'bold' }},
+                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M SERVED'; }}
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            beginAtZero: true,
+                            title: { display: true, text: 'Revenue ($B)', color: '#2b77ad', font: { size: 14, weight: 'bold' }},
+                            ticks: { color: '#2d3748', callback: function(value) { return '$' + value + 'B'; }},
+                            grid: { drawOnChartArea: false }
+                        },
+                        x: {
+                            title: { display: true, text: 'Conservative Timeline', color: '#2d3748', font: { size: 14, weight: 'bold' }},
+                            ticks: { color: '#2d3748' }
+                        }
+                    }
+                }
+            });
+
+            // Demographics Chart
+            const ctx2 = document.getElementById('demographicChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: ['CMS Recipients 150M', 'Gig Workers 73M', 'Veterans 20M', 'Union Members 14M'],
+                    datasets: [{
+                        data: [150, 73, 20, 14],
+                        backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: 'Healthcare Crisis Population: 257M Americans', font: { size: 16, weight: 'bold' }, color: '#2b77ad' },
+                        legend: { position: 'bottom', labels: { font: { size: 11 }, color: '#2d3748' }}
+                    }
+                }
+            });
+
+            // Resistance Chart
+            const ctx3 = document.getElementById('resistanceChart').getContext('2d');
+            new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: ['No Kings', 'Anti-DOGE', 'Sick Day', 'Union Org', 'Economic Alt'],
+                    datasets: [{
+                        label: 'Movement Participants (Millions)',
+                        data: [3, 5, 8, 12, 25],
+                        backgroundColor: ['#e53e3e', '#dd6b20', '#d69e2e', '#38a169', '#2b77ad'],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: 'Resistance Networks Seeking Solutions', font: { size: 16, weight: 'bold' }, color: '#2b77ad' },
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true,
+                            title: { display: true, text: 'Millions Organizing', color: '#2b77ad', font: { weight: 'bold' }},
+                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
+                        },
+                        x: { ticks: { color: '#2d3748' }}
+                    }
+                }
+            });
+
+            // Traditional vs PHIERS Charts
+            const ctx4 = document.getElementById('traditionalChart').getContext('2d');
+            new Chart(ctx4, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Insurance $500', 'Drugs $400', 'Copays $200', 'Other $300'],
+                    datasets: [{
+                        data: [500, 400, 200, 300],
+                        backgroundColor: ['#e53e3e', '#c53030', '#9c1c1c', '#742a2a'],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '?? BANKRUPTCY: $1,400/month', font: { size: 16, weight: 'bold' }, color: '#e53e3e' },
+                        legend: { position: 'bottom', labels: { font: { size: 10 }, color: '#2d3748' }}
+                    }
+                }
+            });
+
+            const ctx5 = document.getElementById('phiersChart').getContext('2d');
+            new Chart(ctx5, {
+                type: 'doughnut',
+                data: {
+                    labels: ['FREE Insurance', 'Cost Plus $120', 'Benefits $200', 'Savings $1,080'],
+                    datasets: [{
+                        data: [0, 120, 200, 1080],
+                        backgroundColor: ['#38a169', '#48bb78', '#68d391', '#9ae6b4'],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '? SURVIVAL: $320/month', font: { size: 16, weight: 'bold' }, color: '#38a169' },
+                        legend: { position: 'bottom', labels: { font: { size: 10 }, color: '#2d3748' }}
+                    }
+                }
+            });
+
+            // Jobs Chart - Conservative
+            const ctx6 = document.getElementById('jobChart').getContext('2d');
+            new Chart(ctx6, {
+                type: 'bar',
+                data: {
+                    labels: ['Healthcare\nInfrastructure', 'Economic\nDevelopment', 'Essential\nServices', 'Member\nSupport'],
+                    datasets: [{
+                        label: 'Jobs Created (Millions)',
+                        data: [10, 15, 10, 5],
+                        backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
+                        borderRadius: 12
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 16, weight: 'bold' }, color: '#2b77ad' },
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true,
+                            title: { display: true, text: 'Jobs Created (Millions)', color: '#2b77ad', font: { weight: 'bold' }},
+                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M Jobs'; }}
+                        },
+                        x: { 
+                            title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
+                            ticks: { color: '#2d3748', font: { size: 11 }}
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
