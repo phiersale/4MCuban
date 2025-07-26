@@ -285,7 +285,7 @@
 
     <div class="hero-section">
         <div class="hero-title">🚨<br>AMERICA'S LAST HOPE</div>
-        <div class="hero-subtitle">Cuban + PHIERS Save 100M+ Americans from Healthcare Crisis</div>
+        <div class="hero-subtitle">Cuban + PHIERS: 100M+ Customers (Exceeds Your 70M Goal by 30M+)</div>
         <div class="crisis-alert">
             ⚠️ CONSERVATIVE PROJECTIONS - STILL WILDLY PROFITABLE ⚠️<br>
             Government failing 150M+ Americans → Healthcare unaffordable → Only viable alternative solution exists
@@ -295,15 +295,27 @@
     <div class="section">
         <div class="chart-container" style="background: rgba(56, 161, 105, 0.95); border-color: #38a169;">
             <h3 style="text-align: center; color: white; font-size: 1.8em; margin-bottom: 20px;">
-                🎯 THE CUSTOMER ACQUISITION STRATEGY
+                🎯 THE 3-PHASE CUSTOMER ACQUISITION STRATEGY
             </h3>
-            <div style="color: white; font-size: 1.2em; line-height: 1.5; text-align: center; max-width: 800px; margin: 0 auto;">
-                <p><strong>PHIERS drives 100M+ exclusive customers to Cost Plus platform</strong></p>
-                <p>• FREE insurance for members = massive customer loyalty</p>
-                <p>• ALL medications purchased exclusively through Cost Plus</p>
-                <p>• CMS saves $100B+ annually through our drug savings</p>
-                <p>• PHIERSale marketplace captures government contracts for documented savings</p>
-                <p><strong>Result: Largest customer acquisition in business history + guaranteed revenue stream</strong></p>
+            <div style="color: white; font-size: 1.1em; line-height: 1.4; text-align: left; max-width: 900px; margin: 0 auto;">
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin: 10px 0;">
+                    <p><strong>📍 PHASE 1 (Months 1-3): Exclusive Commitment</strong></p>
+                    <p>• 12M+ Americans commit to Cost Plus exclusively for ALL medications</p>
+                    <p>• Members get immediate Cost Plus savings while building toward free insurance</p>
+                </div>
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin: 10px 0;">
+                    <p><strong>⚖️ PHASE 2 (Months 3-6): Congressional Leverage</strong></p>
+                    <p>• 3.5% population threshold = same power VA has with 9.5M veterans</p>
+                    <p>• <em>Research proves: 3.5% creates unstoppable peaceful change (overthrows authoritarian governments)</em></p>
+                    <p>• Congress forced to grant CMS discount rates to our program</p>
+                </div>
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 10px; margin: 10px 0;">
+                    <p><strong>🎁 PHASE 3 (Months 6+): FREE Insurance Activated</strong></p>
+                    <p>• $100B+ savings fund FREE insurance ($49/mo per family)</p>
+                    <p>• 100M+ exclusive customers = largest acquisition in history</p>
+                    <p>• <em>Exceeds Cuban's 70M client goal by 30M+ customers</em></p>
+                    <p>• Healthcare System saves TRILLIONS annually</p>
+                </div>
             </div>
         </div>
     </div>
@@ -312,7 +324,7 @@
         <div class="section-title">💡 THE SURVIVAL SOLUTION</div>
         <div class="chart-container">
             <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
-                Americans Saved vs Revenue from Healthcare Innovation (Conservative)
+                3-Phase Customer Acquisition: Commitment → Leverage → Free Insurance
             </h3>
             <div class="chart-wrapper">
                 <canvas id="rescueChart"></canvas>
@@ -367,11 +379,11 @@
             </div>
             <div class="tap-notice">💡 Compare costs by tapping chart sections</div>
             <div style="background: rgba(43, 119, 173, 0.1); padding: 20px; border-radius: 10px; margin-top: 20px; color: #2d3748;">
-                <h4 style="color: #2b77ad; margin-bottom: 15px; text-align: center;">How CMS Savings Get Captured:</h4>
-                <p style="margin: 8px 0; font-size: 1.1em;"><strong>1. Members save $1,080/month</strong> using Cost Plus vs traditional pharmacies</p>
-                <p style="margin: 8px 0; font-size: 1.1em;"><strong>2. CMS saves $100B+ annually</strong> when their beneficiaries use our system</p>
-                <p style="margin: 8px 0; font-size: 1.1em;"><strong>3. PHIERSale marketplace captures government contracts</strong> for documented savings</p>
-                <p style="margin: 8px 0; font-size: 1.1em;"><strong>4. Revenue funds expansion</strong> while Cuban gets exclusive customer base</p>
+                <h4 style="color: #2b77ad; margin-bottom: 15px; text-align: center;">Why 3.5% Creates Unstoppable Change:</h4>
+                <p style="margin: 8px 0; font-size: 1.1em;"><strong>Research Foundation:</strong> Studies prove 3.5% population mobilization creates successful peaceful revolutions</p>
+                <p style="margin: 8px 0; font-size: 1.1em;"><strong>Healthcare Leverage:</strong> 12M+ committed members = more power than VA's 9.5M veterans</p>
+                <p style="margin: 8px 0; font-size: 1.1em;"><strong>Congressional Pressure:</strong> Same threshold that overthrows authoritarian policies forces CMS discounts</p>
+                <p style="margin: 8px 0; font-size: 1.1em;"><strong>Free Insurance Result:</strong> $100B+ savings fund $49/month per family while Cuban gets exclusive customers</p>
             </div>
         </div>
     </div>
@@ -434,15 +446,15 @@
         // Wait for Chart.js to load, then create charts
         window.addEventListener('load', function() {
             try {
-                // Rescue Mission Chart - Conservative
+                // Rescue Mission Chart - Conservative with Phases
                 const ctx1 = document.getElementById('rescueChart').getContext('2d');
                 new Chart(ctx1, {
                     type: 'line',
                     data: {
-                        labels: ['Crisis Begins', 'Month 1', 'Month 3', 'Month 6', 'Month 9', 'Year 1'],
+                        labels: ['Start', 'Phase 1\n(Commitment)', 'Phase 2\n(Leverage)', 'Phase 3\n(Free Insurance)', 'Month 9', 'Year 1'],
                         datasets: [{
-                            label: 'Americans Served (Millions)',
-                            data: [0, 5, 25, 50, 75, 100],
+                            label: 'Committed Members (Millions)',
+                            data: [0, 12, 25, 50, 75, 100],
                             borderColor: '#38a169',
                             backgroundColor: 'rgba(56, 161, 105, 0.2)',
                             borderWidth: 4,
@@ -454,7 +466,7 @@
                             pointRadius: 8
                         }, {
                             label: 'Cuban Revenue ($B)',
-                            data: [0, 0.1, 0.5, 1, 1.5, 2],
+                            data: [0, 0.3, 0.6, 1, 1.5, 2],
                             borderColor: '#2b77ad',
                             backgroundColor: 'rgba(43, 119, 173, 0.2)',
                             borderWidth: 4,
@@ -479,7 +491,7 @@
                         scales: {
                             y: {
                                 beginAtZero: true,
-                                title: { display: true, text: 'Americans Served (Millions)', color: '#38a169', font: { size: 14, weight: 'bold' }},
+                                title: { display: true, text: 'Committed Members (Millions)', color: '#38a169', font: { size: 14, weight: 'bold' }},
                                 ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
                             },
                             y1: {
@@ -487,11 +499,173 @@
                                 position: 'right',
                                 beginAtZero: true,
                                 title: { display: true, text: 'Revenue ($B)', color: '#2b77ad', font: { size: 14, weight: 'bold' }},
-                                ticks: { color: '#2d3748', callback: function(value) { return '$' + value + 'B'; }},
+                                ticks: { color: '#2d3748', callback: function(value) { return '
+
+                // Demographics Chart
+                const ctx2 = document.getElementById('demographicChart').getContext('2d');
+                new Chart(ctx2, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['CMS Recipients 150M', 'Gig Workers 73M', 'Veterans 20M', 'Union Members 14M'],
+                        datasets: [{
+                            data: [150, 73, 20, 14],
+                            backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '257M Americans in Crisis', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                            legend: { position: 'bottom', labels: { font: { size: 10 }, color: '#2d3748' }}
+                        }
+                    }
+                });
+
+                // Resistance Chart
+                const ctx3 = document.getElementById('resistanceChart').getContext('2d');
+                new Chart(ctx3, {
+                    type: 'bar',
+                    data: {
+                        labels: ['No Kings', 'Anti-DOGE', 'Sick Day', 'Union Org', 'Economic Alt'],
+                        datasets: [{
+                            label: 'Movement Participants (Millions)',
+                            data: [3, 5, 8, 12, 25],
+                            backgroundColor: ['#e53e3e', '#dd6b20', '#d69e2e', '#38a169', '#2b77ad'],
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '50M+ Ready for Solutions', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { 
+                                beginAtZero: true,
+                                title: { display: true, text: 'Millions Organizing', color: '#2b77ad', font: { weight: 'bold' }},
+                                ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
+                            },
+                            x: { ticks: { color: '#2d3748', font: { size: 10 }}}
+                        }
+                    }
+                });
+
+                // Traditional vs PHIERS Charts
+                const ctx4 = document.getElementById('traditionalChart').getContext('2d');
+                new Chart(ctx4, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Insurance', 'Drugs', 'Copays', 'Other Costs'],
+                        datasets: [{
+                            data: [500, 400, 200, 300],
+                            backgroundColor: ['#e53e3e', '#c53030', '#9c1c1c', '#742a2a'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '$1,400/month', font: { size: 16, weight: 'bold' }, color: '#e53e3e' },
+                            legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }},
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.label + ': $' + context.parsed + '/month';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                const ctx5 = document.getElementById('phiersChart').getContext('2d');
+                new Chart(ctx5, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['FREE Insurance', 'Cost Plus Drugs', 'Member Benefits', 'Monthly Savings'],
+                        datasets: [{
+                            data: [0, 120, 200, 1080],
+                            backgroundColor: ['#38a169', '#48bb78', '#68d391', '#9ae6b4'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '$320/month', font: { size: 16, weight: 'bold' }, color: '#38a169' },
+                            legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }},
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        if (context.label === 'FREE Insurance') {
+                                            return 'FREE Insurance (normally $500)';
+                                        }
+                                        return context.label + ': $' + context.parsed + '/month';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Jobs Chart - Conservative
+                const ctx6 = document.getElementById('jobChart').getContext('2d');
+                new Chart(ctx6, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Healthcare\nInfrastructure', 'Economic\nDevelopment', 'Essential\nServices', 'Member\nSupport'],
+                        datasets: [{
+                            label: 'Jobs Created (Millions)',
+                            data: [10, 15, 10, 5],
+                            backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
+                            borderRadius: 12
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { 
+                                beginAtZero: true,
+                                title: { display: true, text: 'Jobs Created (Millions)', color: '#2b77ad', font: { weight: 'bold' }},
+                                ticks: { color: '#2d3748', callback: function(value) { return value + 'M Jobs'; }}
+                            },
+                            x: { 
+                                title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
+                                ticks: { color: '#2d3748', font: { size: 10 }}
+                            }
+                        }
+                    }
+                });
+
+            } catch (error) {
+                console.error('Chart loading error:', error);
+                // Fallback: Show error message
+                document.body.insertAdjacentHTML('afterbegin', 
+                    '<div style="background: #e53e3e; color: white; text-align: center; padding: 10px;">Charts loading... Please refresh if they don\'t appear.</div>'
+                );
+            }
+        });
+    </script>
+</body>
+</html> + value + 'B'; }},
                                 grid: { drawOnChartArea: false }
                             },
                             x: {
-                                title: { display: true, text: 'Conservative Timeline', color: '#2d3748', font: { size: 14, weight: 'bold' }},
+                                title: { display: true, text: '3-Phase Timeline', color: '#2d3748', font: { size: 14, weight: 'bold' }},
                                 ticks: { color: '#2d3748' }
                             }
                         }
