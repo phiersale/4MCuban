@@ -433,295 +433,228 @@
     <script>
         // Wait for Chart.js to load, then create charts
         window.addEventListener('load', function() {
-            // Rescue Mission Chart - Conservative
-            const ctx1 = document.getElementById('rescueChart').getContext('2d');
-            new Chart(ctx1, {
-                type: 'line',
-                data: {
-                    labels: ['Crisis Begins', 'Month 1', 'Month 3', 'Month 6', 'Month 9', 'Year 1'],
-                    datasets: [{
-                        label: 'Americans Served (Millions)',
-                        data: [0, 5, 25, 50, 75, 100],
-                        borderColor: '#38a169',
-                        backgroundColor: 'rgba(56, 161, 105, 0.2)',
-                        borderWidth: 4,
-                        fill: true,
-                        tension: 0.4,
-                        pointBackgroundColor: '#38a169',
-                        pointBorderColor: '#fff',
-                        pointBorderWidth: 3,
-                        pointRadius: 8
-                    }, {
-                        label: 'Cuban Revenue ($B)',
-                        data: [0, 0.1, 0.5, 1, 1.5, 2],
-                        borderColor: '#2b77ad',
-                        backgroundColor: 'rgba(43, 119, 173, 0.2)',
-                        borderWidth: 4,
-                        fill: true,
-                        tension: 0.4,
-                        pointBackgroundColor: '#2b77ad',
-                        pointBorderColor: '#fff',
-                        pointBorderWidth: 3,
-                        pointRadius: 8,
-                        yAxisID: 'y1'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                            labels: { font: { size: 14, weight: 'bold' }, color: '#2d3748' }
-                        }
+            try {
+                // Rescue Mission Chart - Conservative
+                const ctx1 = document.getElementById('rescueChart').getContext('2d');
+                new Chart(ctx1, {
+                    type: 'line',
+                    data: {
+                        labels: ['Crisis Begins', 'Month 1', 'Month 3', 'Month 6', 'Month 9', 'Year 1'],
+                        datasets: [{
+                            label: 'Americans Served (Millions)',
+                            data: [0, 5, 25, 50, 75, 100],
+                            borderColor: '#38a169',
+                            backgroundColor: 'rgba(56, 161, 105, 0.2)',
+                            borderWidth: 4,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#38a169',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 3,
+                            pointRadius: 8
+                        }, {
+                            label: 'Cuban Revenue ($B)',
+                            data: [0, 0.1, 0.5, 1, 1.5, 2],
+                            borderColor: '#2b77ad',
+                            backgroundColor: 'rgba(43, 119, 173, 0.2)',
+                            borderWidth: 4,
+                            fill: true,
+                            tension: 0.4,
+                            pointBackgroundColor: '#2b77ad',
+                            pointBorderColor: '#fff',
+                            pointBorderWidth: 3,
+                            pointRadius: 8,
+                            yAxisID: 'y1'
+                        }]
                     },
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            title: { display: true, text: 'Americans Served (Millions)', color: '#38a169', font: { size: 14, weight: 'bold' }},
-                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: { font: { size: 14, weight: 'bold' }, color: '#2d3748' }
+                            }
                         },
-                        y1: {
-                            type: 'linear',
-                            position: 'right',
-                            beginAtZero: true,
-                            title: { display: true, text: 'Revenue ($B)', color: '#2b77ad', font: { size: 14, weight: 'bold' }},
-                            ticks: { color: '#2d3748', callback: function(value) { return '$' + value + 'B'; }},
-                            grid: { drawOnChartArea: false }
-                        },
-                        x: {
-                            title: { display: true, text: 'Conservative Timeline', color: '#2d3748', font: { size: 14, weight: 'bold' }},
-                            ticks: { color: '#2d3748' }
-                        }
-                    }
-                }
-            });
-
-            // Demographics Chart
-            const ctx2 = document.getElementById('demographicChart').getContext('2d');
-            new Chart(ctx2, {
-                type: 'doughnut',
-                data: {
-                    labels: ['CMS Recipients 150M', 'Gig Workers 73M', 'Veterans 20M', 'Union Members 14M'],
-                    datasets: [{
-                        data: [150, 73, 20, 14],
-                        backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
-                        borderWidth: 2,
-                        borderColor: '#fff'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: '257M Americans in Crisis', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
-                        legend: { position: 'bottom', labels: { font: { size: 10 }, color: '#2d3748' }}
-                    }
-                }
-            });
-
-            // Resistance Chart
-            const ctx3 = document.getElementById('resistanceChart').getContext('2d');
-            new Chart(ctx3, {
-                type: 'bar',
-                data: {
-                    labels: ['No Kings', 'Anti-DOGE', 'Sick Day', 'Union Org', 'Economic Alt'],
-                    datasets: [{
-                        label: 'Movement Participants (Millions)',
-                        data: [3, 5, 8, 12, 25],
-                        backgroundColor: ['#e53e3e', '#dd6b20', '#d69e2e', '#38a169', '#2b77ad'],
-                        borderRadius: 8
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: '50M+ Ready for Solutions', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: { 
-                            beginAtZero: true,
-                            title: { display: true, text: 'Millions Organizing', color: '#2b77ad', font: { weight: 'bold' }},
-                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
-                        },
-                        x: { ticks: { color: '#2d3748', font: { size: 10 }}}
-                    }
-                }
-            });
-
-            // Traditional vs PHIERS Charts
-            const ctx4 = document.getElementById('traditionalChart').getContext('2d');
-            new Chart(ctx4, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Insurance', 'Drugs', 'Copays', 'Other Costs'],
-                    datasets: [{
-                        data: [500, 400, 200, 300],
-                        backgroundColor: ['#e53e3e', '#c53030', '#9c1c1c', '#742a2a'],
-                        borderWidth: 2,
-                        borderColor: '#fff'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: '$1,400/month', font: { size: 16, weight: 'bold' }, color: '#e53e3e' },
-                        legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }},
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.label + ': 
-
-            // Jobs Chart - Conservative
-            const ctx6 = document.getElementById('jobChart').getContext('2d');
-            new Chart(ctx6, {
-                type: 'bar',
-                data: {
-                    labels: ['Healthcare\nInfrastructure', 'Economic\nDevelopment', 'Essential\nServices', 'Member\nSupport'],
-                    datasets: [{
-                        label: 'Jobs Created (Millions)',
-                        data: [10, 15, 10, 5],
-                        backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
-                        borderRadius: 12
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: { 
-                            beginAtZero: true,
-                            title: { display: true, text: 'Jobs Created (Millions)', color: '#2b77ad', font: { weight: 'bold' }},
-                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M Jobs'; }}
-                        },
-                        x: { 
-                            title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
-                            ticks: { color: '#2d3748', font: { size: 10 }}
-                        }
-                    }
-                }
-            });
-        });
-    </script>
-</body>
-</html> + context.parsed + '/month';
-                                }
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: { display: true, text: 'Americans Served (Millions)', color: '#38a169', font: { size: 14, weight: 'bold' }},
+                                ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
+                            },
+                            y1: {
+                                type: 'linear',
+                                position: 'right',
+                                beginAtZero: true,
+                                title: { display: true, text: 'Revenue ($B)', color: '#2b77ad', font: { size: 14, weight: 'bold' }},
+                                ticks: { color: '#2d3748', callback: function(value) { return '$' + value + 'B'; }},
+                                grid: { drawOnChartArea: false }
+                            },
+                            x: {
+                                title: { display: true, text: 'Conservative Timeline', color: '#2d3748', font: { size: 14, weight: 'bold' }},
+                                ticks: { color: '#2d3748' }
                             }
                         }
                     }
-                }
-            });
+                });
 
-            const ctx5 = document.getElementById('phiersChart').getContext('2d');
-            new Chart(ctx5, {
-                type: 'doughnut',
-                data: {
-                    labels: ['FREE Insurance', 'Cost Plus Drugs', 'Member Benefits', 'Monthly Savings'],
-                    datasets: [{
-                        data: [0, 120, 200, 1080],
-                        backgroundColor: ['#38a169', '#48bb78', '#68d391', '#9ae6b4'],
-                        borderWidth: 2,
-                        borderColor: '#fff'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: '$320/month', font: { size: 16, weight: 'bold' }, color: '#38a169' },
-                        legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }},
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    if (context.label === 'FREE Insurance') {
-                                        return 'FREE Insurance (normally $500)';
+                // Demographics Chart
+                const ctx2 = document.getElementById('demographicChart').getContext('2d');
+                new Chart(ctx2, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['CMS Recipients 150M', 'Gig Workers 73M', 'Veterans 20M', 'Union Members 14M'],
+                        datasets: [{
+                            data: [150, 73, 20, 14],
+                            backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '257M Americans in Crisis', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                            legend: { position: 'bottom', labels: { font: { size: 10 }, color: '#2d3748' }}
+                        }
+                    }
+                });
+
+                // Resistance Chart
+                const ctx3 = document.getElementById('resistanceChart').getContext('2d');
+                new Chart(ctx3, {
+                    type: 'bar',
+                    data: {
+                        labels: ['No Kings', 'Anti-DOGE', 'Sick Day', 'Union Org', 'Economic Alt'],
+                        datasets: [{
+                            label: 'Movement Participants (Millions)',
+                            data: [3, 5, 8, 12, 25],
+                            backgroundColor: ['#e53e3e', '#dd6b20', '#d69e2e', '#38a169', '#2b77ad'],
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '50M+ Ready for Solutions', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { 
+                                beginAtZero: true,
+                                title: { display: true, text: 'Millions Organizing', color: '#2b77ad', font: { weight: 'bold' }},
+                                ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
+                            },
+                            x: { ticks: { color: '#2d3748', font: { size: 10 }}}
+                        }
+                    }
+                });
+
+                // Traditional vs PHIERS Charts
+                const ctx4 = document.getElementById('traditionalChart').getContext('2d');
+                new Chart(ctx4, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Insurance', 'Drugs', 'Copays', 'Other Costs'],
+                        datasets: [{
+                            data: [500, 400, 200, 300],
+                            backgroundColor: ['#e53e3e', '#c53030', '#9c1c1c', '#742a2a'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '$1,400/month', font: { size: 16, weight: 'bold' }, color: '#e53e3e' },
+                            legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }},
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.label + ': $' + context.parsed + '/month';
                                     }
-                                    return context.label + ': 
-
-            // Jobs Chart - Conservative
-            const ctx6 = document.getElementById('jobChart').getContext('2d');
-            new Chart(ctx6, {
-                type: 'bar',
-                data: {
-                    labels: ['Healthcare\nInfrastructure', 'Economic\nDevelopment', 'Essential\nServices', 'Member\nSupport'],
-                    datasets: [{
-                        label: 'Jobs Created (Millions)',
-                        data: [10, 15, 10, 5],
-                        backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
-                        borderRadius: 12
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: { 
-                            beginAtZero: true,
-                            title: { display: true, text: 'Jobs Created (Millions)', color: '#2b77ad', font: { weight: 'bold' }},
-                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M Jobs'; }}
-                        },
-                        x: { 
-                            title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
-                            ticks: { color: '#2d3748', font: { size: 10 }}
-                        }
-                    }
-                }
-            });
-        });
-    </script>
-</body>
-</html> + context.parsed + '/month';
                                 }
                             }
                         }
                     }
-                }
-            });
+                });
 
-            // Jobs Chart - Conservative
-            const ctx6 = document.getElementById('jobChart').getContext('2d');
-            new Chart(ctx6, {
-                type: 'bar',
-                data: {
-                    labels: ['Healthcare\nInfrastructure', 'Economic\nDevelopment', 'Essential\nServices', 'Member\nSupport'],
-                    datasets: [{
-                        label: 'Jobs Created (Millions)',
-                        data: [10, 15, 10, 5],
-                        backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
-                        borderRadius: 12
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
-                        legend: { display: false }
+                const ctx5 = document.getElementById('phiersChart').getContext('2d');
+                new Chart(ctx5, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['FREE Insurance', 'Cost Plus Drugs', 'Member Benefits', 'Monthly Savings'],
+                        datasets: [{
+                            data: [0, 120, 200, 1080],
+                            backgroundColor: ['#38a169', '#48bb78', '#68d391', '#9ae6b4'],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
                     },
-                    scales: {
-                        y: { 
-                            beginAtZero: true,
-                            title: { display: true, text: 'Jobs Created (Millions)', color: '#2b77ad', font: { weight: 'bold' }},
-                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M Jobs'; }}
-                        },
-                        x: { 
-                            title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
-                            ticks: { color: '#2d3748', font: { size: 10 }}
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '$320/month', font: { size: 16, weight: 'bold' }, color: '#38a169' },
+                            legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }},
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        if (context.label === 'FREE Insurance') {
+                                            return 'FREE Insurance (normally $500)';
+                                        }
+                                        return context.label + ': $' + context.parsed + '/month';
+                                    }
+                                }
+                            }
                         }
                     }
-                }
-            });
+                });
+
+                // Jobs Chart - Conservative
+                const ctx6 = document.getElementById('jobChart').getContext('2d');
+                new Chart(ctx6, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Healthcare\nInfrastructure', 'Economic\nDevelopment', 'Essential\nServices', 'Member\nSupport'],
+                        datasets: [{
+                            label: 'Jobs Created (Millions)',
+                            data: [10, 15, 10, 5],
+                            backgroundColor: ['#2b77ad', '#4299e1', '#1a365d', '#2d3748'],
+                            borderRadius: 12
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { 
+                                beginAtZero: true,
+                                title: { display: true, text: 'Jobs Created (Millions)', color: '#2b77ad', font: { weight: 'bold' }},
+                                ticks: { color: '#2d3748', callback: function(value) { return value + 'M Jobs'; }}
+                            },
+                            x: { 
+                                title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
+                                ticks: { color: '#2d3748', font: { size: 10 }}
+                            }
+                        }
+                    }
+                });
+
+            } catch (error) {
+                console.error('Chart loading error:', error);
+                // Fallback: Show error message
+                document.body.insertAdjacentHTML('afterbegin', 
+                    '<div style="background: #e53e3e; color: white; text-align: center; padding: 10px;">Charts loading... Please refresh if they don\'t appear.</div>'
+                );
+            }
         });
     </script>
 </body>
