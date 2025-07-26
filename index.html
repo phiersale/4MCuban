@@ -15,6 +15,22 @@
             overflow-x: hidden;
         }
         
+        .interactive-notice {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: #2c3e50;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-bottom: 3px solid #e67e22;
+            animation: gentle-pulse 3s infinite;
+        }
+        
+        @keyframes gentle-pulse {
+            0%, 100% { background: linear-gradient(135deg, #f1c40f, #f39c12); }
+            50% { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        }
+        
         .hero-section {
             text-align: center;
             padding: 60px 20px;
@@ -93,6 +109,33 @@
             position: relative;
             height: 500px;
             margin: 20px 0;
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        
+        .chart-box {
+            background: rgba(43, 119, 173, 0.1);
+            border: 2px solid #4299e1;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .chart-box:hover {
+            transform: scale(1.02);
+            background: rgba(43, 119, 173, 0.15);
+        }
+        
+        .chart-box h4 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.2em;
         }
         
         .stats-grid {
@@ -174,6 +217,15 @@
             margin-bottom: 30px;
         }
         
+        .tap-notice {
+            text-align: center;
+            color: #2d3748;
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        
+        /* Mobile Optimizations */
         @media (max-width: 768px) {
             .hero-title { font-size: 2.2em; }
             .hero-subtitle { font-size: 1.3em; }
@@ -181,21 +233,55 @@
             .chart-wrapper { height: 400px; }
             .cta-title { font-size: 2em; }
             .investment-amount { font-size: 2.8em; }
+            
+            /* Stack charts vertically on mobile */
+            .chart-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .chart-box {
+                margin-bottom: 20px;
+            }
+            
+            .interactive-notice {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section {
+                padding: 40px 15px;
+            }
+            
+            .chart-container {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .chart-wrapper {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="interactive-notice">
+        📊 INTERACTIVE PRESENTATION - Tap charts to explore data • Scroll down for full analysis
+    </div>
+
     <div class="hero-section">
-        <div class="hero-title">?? AMERICA'S LAST HOPE ??</div>
+        <div class="hero-title">🚨 AMERICA'S LAST HOPE 🚨</div>
         <div class="hero-subtitle">Cuban + PHIERS Save 100M+ Americans from Healthcare Crisis</div>
         <div class="crisis-alert">
-            ?? CONSERVATIVE PROJECTIONS - STILL WILDLY PROFITABLE ??<br>
-            Government failing 150M+ Americans ? Healthcare unaffordable ? Only viable alternative solution exists
+            ⚠️ CONSERVATIVE PROJECTIONS - STILL WILDLY PROFITABLE ⚠️<br>
+            Government failing 150M+ Americans → Healthcare unaffordable → Only viable alternative solution exists
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">?? THE SURVIVAL SOLUTION</div>
+        <div class="section-title">💡 THE SURVIVAL SOLUTION</div>
         <div class="chart-container">
             <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
                 Americans Saved vs Revenue from Healthcare Innovation (Conservative)
@@ -203,45 +289,60 @@
             <div class="chart-wrapper">
                 <canvas id="rescueChart"></canvas>
             </div>
+            <div class="tap-notice">💡 Tap chart points for detailed data</div>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">?? CRISIS POPULATION</div>
+        <div class="section-title">🎯 CRISIS POPULATION</div>
         <div class="chart-container">
             <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
-                150M+ Americans Need Immediate Healthcare Solution
+                257M+ Americans Need Immediate Healthcare Solution
             </h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0;">
-                <div class="chart-wrapper">
-                    <canvas id="demographicChart"></canvas>
+            <div class="chart-grid">
+                <div class="chart-box">
+                    <h4>Healthcare Crisis Population</h4>
+                    <div class="chart-wrapper">
+                        <canvas id="demographicChart"></canvas>
+                    </div>
                 </div>
-                <div class="chart-wrapper">
-                    <canvas id="resistanceChart"></canvas>
+                <div class="chart-box">
+                    <h4>Resistance Networks Ready for Solutions</h4>
+                    <div class="chart-wrapper">
+                        <canvas id="resistanceChart"></canvas>
+                    </div>
                 </div>
             </div>
+            <div class="tap-notice">💡 Tap chart segments for detailed breakdowns</div>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">?? SAVINGS VS BANKRUPTCY</div>
+        <div class="section-title">💰 SAVINGS VS BANKRUPTCY</div>
         <div class="chart-container">
             <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
-                Traditional Healthcare = Financial Ruin � PHIERS = Economic Survival
+                Traditional Healthcare = Financial Ruin • PHIERS = Economic Survival
             </h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0;">
-                <div class="chart-wrapper">
-                    <canvas id="traditionalChart"></canvas>
+            <div class="chart-grid">
+                <div class="chart-box">
+                    <h4>💸 Traditional Healthcare Costs</h4>
+                    <div class="chart-wrapper">
+                        <canvas id="traditionalChart"></canvas>
+                    </div>
                 </div>
-                <div class="chart-wrapper">
-                    <canvas id="phiersChart"></canvas>
+                <div class="chart-box">
+                    <h4>✅ PHIERS Healthcare Solution</h4>
+                    <div class="chart-wrapper">
+                        <canvas id="phiersChart"></canvas>
+                    </div>
                 </div>
             </div>
+            <div class="tap-notice">💡 Compare costs by tapping chart sections</div>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">??? ECONOMIC RECOVERY</div>
+        <div class="section-title">🏗️ ECONOMIC RECOVERY</div>
         <div class="chart-container">
             <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
                 35M+ Jobs Through Healthcare Savings (Conservative)
@@ -249,6 +350,7 @@
             <div class="chart-wrapper">
                 <canvas id="jobChart"></canvas>
             </div>
+            <div class="tap-notice">💡 Tap bars to see job creation details</div>
         </div>
     </div>
 
@@ -377,8 +479,8 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        title: { display: true, text: 'Healthcare Crisis Population: 257M Americans', font: { size: 16, weight: 'bold' }, color: '#2b77ad' },
-                        legend: { position: 'bottom', labels: { font: { size: 11 }, color: '#2d3748' }}
+                        title: { display: true, text: '257M Americans in Crisis', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
+                        legend: { position: 'bottom', labels: { font: { size: 10 }, color: '#2d3748' }}
                     }
                 }
             });
@@ -400,7 +502,7 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        title: { display: true, text: 'Resistance Networks Seeking Solutions', font: { size: 16, weight: 'bold' }, color: '#2b77ad' },
+                        title: { display: true, text: '50M+ Ready for Solutions', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
                         legend: { display: false }
                     },
                     scales: {
@@ -409,7 +511,7 @@
                             title: { display: true, text: 'Millions Organizing', color: '#2b77ad', font: { weight: 'bold' }},
                             ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }}
                         },
-                        x: { ticks: { color: '#2d3748' }}
+                        x: { ticks: { color: '#2d3748', font: { size: 10 }}}
                     }
                 }
             });
@@ -431,8 +533,8 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        title: { display: true, text: '?? BANKRUPTCY: $1,400/month', font: { size: 16, weight: 'bold' }, color: '#e53e3e' },
-                        legend: { position: 'bottom', labels: { font: { size: 10 }, color: '#2d3748' }}
+                        title: { display: true, text: '$1,400/month', font: { size: 16, weight: 'bold' }, color: '#e53e3e' },
+                        legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }}
                     }
                 }
             });
@@ -453,8 +555,8 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        title: { display: true, text: '? SURVIVAL: $320/month', font: { size: 16, weight: 'bold' }, color: '#38a169' },
-                        legend: { position: 'bottom', labels: { font: { size: 10 }, color: '#2d3748' }}
+                        title: { display: true, text: '$320/month', font: { size: 16, weight: 'bold' }, color: '#38a169' },
+                        legend: { position: 'bottom', labels: { font: { size: 9 }, color: '#2d3748' }}
                     }
                 }
             });
@@ -476,7 +578,7 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     plugins: {
-                        title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 16, weight: 'bold' }, color: '#2b77ad' },
+                        title: { display: true, text: '35M+ Jobs Through Healthcare Savings', font: { size: 14, weight: 'bold' }, color: '#2b77ad' },
                         legend: { display: false }
                     },
                     scales: {
@@ -487,7 +589,7 @@
                         },
                         x: { 
                             title: { display: true, text: 'Economic Recovery Sectors', color: '#2b77ad', font: { weight: 'bold' }},
-                            ticks: { color: '#2d3748', font: { size: 11 }}
+                            ticks: { color: '#2d3748', font: { size: 10 }}
                         }
                     }
                 }
