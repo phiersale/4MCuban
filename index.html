@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SURVIVAL CRISIS: Mark Cuban + 100M Americans vs DOGE/Project 2025</title>
+    <title>Mark Cuban: $50K → $2B+ Revenue | 100M+ Customer Acquisition</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
             margin: 0;
             padding: 0;
             color: white;
@@ -16,26 +16,20 @@
         }
         
         .header-notice {
-            background: linear-gradient(135deg, #1a202c, #2d3748);
+            background: linear-gradient(135deg, #2b77ad, #4299e1);
             color: white;
             text-align: center;
             padding: 15px;
             font-weight: bold;
             font-size: 1.1em;
-            border-bottom: 3px solid #e53e3e;
-            animation: flash 2s infinite;
-        }
-        
-        @keyframes flash {
-            0%, 100% { background: linear-gradient(135deg, #1a202c, #2d3748); }
-            50% { background: linear-gradient(135deg, #e53e3e, #c53030); }
+            border-bottom: 3px solid #1a365d;
         }
         
         .hero-section {
             text-align: center;
             padding: 60px 20px;
-            background: linear-gradient(135deg, #e53e3e, #c53030);
-            border-bottom: 5px solid #fc8181;
+            background: linear-gradient(135deg, #38a169, #2f855a);
+            border-bottom: 5px solid #48bb78;
         }
         
         .hero-title {
@@ -60,7 +54,7 @@
             font-weight: bold;
         }
         
-        .crisis-alert {
+        .opportunity-alert {
             background: rgba(255,255,255,0.2);
             padding: 25px;
             border-radius: 15px;
@@ -88,21 +82,21 @@
             font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 40px;
-            color: #fff;
+            color: #63b3ed;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
-        .survival-section {
-            background: linear-gradient(135deg, #1a202c, #2d3748);
+        .opportunity-section {
+            background: linear-gradient(135deg, #2b77ad, #1a365d);
             padding: 80px 20px;
-            border-top: 5px solid #e53e3e;
-            border-bottom: 5px solid #e53e3e;
+            border-top: 5px solid #4299e1;
+            border-bottom: 5px solid #4299e1;
         }
         
-        .war-box {
-            background: rgba(229, 62, 62, 0.2);
-            border: 3px solid #e53e3e;
+        .opportunity-box {
+            background: rgba(99, 179, 237, 0.2);
+            border: 3px solid #63b3ed;
             border-radius: 20px;
             padding: 40px;
             margin: 40px auto;
@@ -110,23 +104,23 @@
             animation: glow 3s infinite alternate;
         }
         
-        .war-title {
+        .opportunity-title {
             font-size: 2.2em;
             font-weight: bold;
-            color: #fc8181;
+            color: #63b3ed;
             margin-bottom: 25px;
             text-align: center;
             text-transform: uppercase;
         }
         
-        .war-content {
+        .opportunity-content {
             font-size: 1.2em;
             line-height: 1.6;
             color: white;
         }
         
-        .war-content strong {
-            color: #fc8181;
+        .opportunity-content strong {
+            color: #63b3ed;
         }
         
         .timing-section {
@@ -135,7 +129,7 @@
             text-align: center;
         }
         
-        .countdown-box {
+        .window-box {
             background: rgba(255,255,255,0.2);
             padding: 40px;
             border-radius: 20px;
@@ -145,7 +139,7 @@
             animation: pulse 2s infinite;
         }
         
-        .countdown-title {
+        .window-title {
             font-size: 2.8em;
             font-weight: bold;
             margin-bottom: 30px;
@@ -173,19 +167,19 @@
             color: #f7fafc;
         }
         
-        .coalition-section {
+        .customers-section {
             background: linear-gradient(135deg, #38a169, #2f855a);
             padding: 80px 20px;
         }
         
-        .coalition-grid {
+        .customers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
         
-        .coalition-card {
+        .customer-card {
             background: rgba(255,255,255,0.2);
             padding: 30px;
             border-radius: 15px;
@@ -194,30 +188,30 @@
             transition: transform 0.3s ease;
         }
         
-        .coalition-card:hover {
+        .customer-card:hover {
             transform: scale(1.05);
         }
         
-        .coalition-number {
+        .customer-number {
             font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 10px;
             color: #fff;
         }
         
-        .coalition-label {
+        .customer-label {
             font-size: 1.1em;
             font-weight: bold;
             color: #f0fff4;
         }
         
-        .partnership-section {
+        .deal-section {
             background: linear-gradient(135deg, #2b77ad, #1a365d);
             padding: 80px 20px;
             text-align: center;
         }
         
-        .offer-box {
+        .deal-box {
             background: rgba(255,255,255,0.15);
             padding: 50px;
             border-radius: 25px;
@@ -227,7 +221,7 @@
             animation: glow 3s infinite alternate;
         }
         
-        .offer-title {
+        .deal-title {
             font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 30px;
@@ -235,7 +229,7 @@
             text-transform: uppercase;
         }
         
-        .offer-amount {
+        .deal-amount {
             font-size: 4em;
             font-weight: bold;
             color: #63b3ed;
@@ -243,7 +237,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
-        .offer-details {
+        .deal-details {
             font-size: 1.3em;
             line-height: 1.5;
             margin: 25px 0;
@@ -258,62 +252,38 @@
             border: 2px solid #63b3ed;
         }
         
-        .choice-section {
+        .revenue-section {
             background: linear-gradient(135deg, #1a202c, #2d3748);
             padding: 80px 20px;
-            text-align: center;
         }
         
-        .choice-title {
-            font-size: 2.8em;
-            font-weight: bold;
-            margin-bottom: 40px;
-            color: #fc8181;
-            text-transform: uppercase;
-        }
-        
-        .choice-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin: 40px 0;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .choice-option {
-            padding: 40px;
+        .chart-container {
+            background: rgba(255,255,255,0.95);
             border-radius: 20px;
-            border: 3px solid;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 3px solid #4299e1;
+            transition: transform 0.3s ease;
         }
         
-        .choice-bad {
-            background: rgba(229, 62, 62, 0.2);
-            border-color: #e53e3e;
+        .chart-container:hover {
+            transform: translateY(-5px);
         }
         
-        .choice-good {
-            background: rgba(56, 161, 105, 0.2);
-            border-color: #38a169;
+        .chart-wrapper {
+            position: relative;
+            height: 500px;
+            margin: 20px 0;
         }
         
-        .choice-option h4 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        
-        .choice-bad h4 { color: #fc8181; }
-        .choice-good h4 { color: #68d391; }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #e53e3e, #c53030);
+        .action-section {
+            background: linear-gradient(135deg, #38a169, #2f855a);
             padding: 100px 20px;
             text-align: center;
         }
         
-        .cta-title {
+        .action-title {
             font-size: 3.2em;
             font-weight: bold;
             margin-bottom: 30px;
@@ -321,14 +291,14 @@
             animation: pulse 2s infinite;
         }
         
-        .cta-urgent {
+        .action-urgent {
             font-size: 1.8em;
             margin-bottom: 40px;
             font-weight: bold;
             color: #fff;
         }
         
-        .action-box {
+        .contact-box {
             background: rgba(255,255,255,0.2);
             padding: 40px;
             border-radius: 20px;
@@ -356,219 +326,283 @@
             .hero-title { font-size: 2.2em; }
             .hero-subtitle { font-size: 1.4em; }
             .section-title { font-size: 2em; }
-            .countdown-title { font-size: 2.2em; }
-            .offer-amount { font-size: 3em; }
-            .choice-grid { grid-template-columns: 1fr; gap: 20px; }
-            .coalition-grid { grid-template-columns: repeat(2, 1fr); }
+            .window-title { font-size: 2.2em; }
+            .deal-amount { font-size: 3em; }
+            .customers-grid { grid-template-columns: repeat(2, 1fr); }
         }
         
         @media (max-width: 480px) {
-            .section, .survival-section, .timing-section, .coalition-section, .partnership-section, .choice-section, .cta-section {
+            .section, .opportunity-section, .timing-section, .customers-section, .deal-section, .revenue-section, .action-section {
                 padding: 40px 10px;
             }
             
             .hero-title { font-size: 1.8em; }
-            .crisis-alert { font-size: 1.1em; padding: 20px; }
-            .war-box, .countdown-box, .offer-box, .action-box { padding: 25px; margin: 20px 10px; }
+            .opportunity-alert { font-size: 1.1em; padding: 20px; }
+            .opportunity-box, .window-box, .deal-box, .contact-box { padding: 25px; margin: 20px 10px; }
         }
     </style>
 </head>
 <body>
     <div class="header-notice">
-        🚨 URGENT: CONGRESS HOME UNTIL SEPT 3RD • WINDOW CLOSING • <a href="https://docs.google.com/document/d/1eV9PUIJFnRattAvy9C8Ya7LuCPSCFrs6ewmxgqlPT4g/edit?usp=sharing" target="_blank" style="color: white; text-decoration: underline;">FULL STRATEGY →</a>
+        📊 BUSINESS OPPORTUNITY • CONGRESS HOME UNTIL SEPT 3RD • <a href="https://docs.google.com/document/d/1eV9PUIJFnRattAvy9C8Ya7LuCPSCFrs6ewmxgqlPT4g/edit?usp=sharing" target="_blank" style="color: white; text-decoration: underline;">FULL STRATEGY →</a>
     </div>
 
     <div class="hero-section">
-        <div class="hero-title">⚡<br>SURVIVAL CRISIS</div>
-        <div class="hero-subtitle">Mark Cuban + 100M Americans vs DOGE/Project 2025</div>
-        <div class="crisis-alert">
-            💀 WHILE YOU BUILD COST PLUS, THEY'RE BUILDING CONCENTRATION CAMPS 💀<br>
-            <strong>SURVIVAL BEATS EXTERMINATION • DEMOCRATIC CAPITALISM vs AUTHORITARIAN DESTRUCTION</strong>
+        <div class="hero-title">🚀<br>MOONSHOT OPPORTUNITY</div>
+        <div class="hero-subtitle">Mark Cuban: $50K → $2B+ Revenue | 100M+ Customers</div>
+        <div class="opportunity-alert">
+            💰 LARGEST CUSTOMER ACQUISITION IN BUSINESS HISTORY 💰<br>
+            <strong>Perfect Timing + Ready Coalition + Proven Savings = Explosive Growth</strong>
         </div>
     </div>
 
-    <div class="survival-section">
-        <div class="section-title">⚔️ THE WAR WE'RE FIGHTING TOGETHER</div>
-        <div class="war-box">
-            <div class="war-title">🔥 RIGHT NOW AS YOU READ THIS</div>
-            <div class="war-content">
-                <p><strong>DOGE is systematically dismantling safety nets.</strong> Project 2025 is eliminating protective agencies. <strong>Concentration camps are being built.</strong></p>
+    <div class="opportunity-section">
+        <div class="section-title">💎 THE OPPORTUNITY FOR YOU</div>
+        <div class="opportunity-box">
+            <div class="opportunity-title">🎯 100M+ CUSTOMERS READY NOW</div>
+            <div class="opportunity-content">
+                <p><strong>While you've been proving ethical business can deliver affordable medications,</strong> 100+ million Americans are desperately seeking exactly what Cost Plus provides.</p>
                 
-                <p><strong>73 million gig workers are being abandoned.</strong> Families are paying $1,400 a month for healthcare they can't afford while choosing between rent and insulin.</p>
+                <p><strong>73 million gig workers, CMS recipients, veterans, and union members</strong> are paying $1,400+ monthly for healthcare they can't afford while choosing between rent and insulin.</p>
                 
-                <p><strong>But together, we can turn your business success into their political defeat.</strong></p>
+                <p><strong>But together, we can turn their desperation into your largest customer acquisition in business history.</strong></p>
                 
-                <p style="font-size: 1.4em; color: #fc8181; font-weight: bold; text-align: center; margin-top: 30px;">
-                    This isn't just business. This is SURVIVAL that does good business.
+                <p style="font-size: 1.4em; color: #63b3ed; font-weight: bold; text-align: center; margin-top: 30px;">
+                    This is business opportunity disguised as social impact.
                 </p>
             </div>
         </div>
     </div>
 
     <div class="timing-section">
-        <div class="section-title">⏰ PERFECT STORM: RIGHT NOW</div>
-        <div class="countdown-box">
-            <div class="countdown-title">AUGUST RECESS = MAXIMUM LEVERAGE</div>
+        <div class="section-title">⏰ PERFECT TIMING WINDOW</div>
+        <div class="window-box">
+            <div class="window-title">AUGUST RECESS = MAXIMUM LEVERAGE</div>
             <div style="font-size: 1.3em; margin-bottom: 30px; color: white;">
-                Congress is home facing angry constituents. This is our once-in-a-generation window.
+                Congress is home facing constituents. VHIERSMovement can deliver unprecedented customer acquisition during this window.
             </div>
             
             <div class="timeline-item">
                 <div class="timeline-date">THIS WEEK</div>
-                <div class="timeline-action">12 million Americans commit to Cost Plus through VHIERSMovement</div>
+                <div class="timeline-action">12 million Americans commit to Cost Plus exclusively through VHIERSMovement</div>
             </div>
             
             <div class="timeline-item">
                 <div class="timeline-date">AUGUST 31ST</div>
-                <div class="timeline-action">PHIERSafe approved for Medicare/Medicaid exchanges</div>
+                <div class="timeline-action">PHIERSafe integrated into Medicare/Medicaid exchanges</div>
             </div>
             
             <div class="timeline-item">
                 <div class="timeline-date">SEPTEMBER 3RD</div>
-                <div class="timeline-action">Congress returns to unstoppable political momentum</div>
+                <div class="timeline-action">Congressional return with unstoppable momentum for Cost Plus expansion</div>
             </div>
             
             <div class="timeline-item">
                 <div class="timeline-date">DECEMBER 31ST</div>
-                <div class="timeline-action">100+ million customers, $2+ billion revenue, democracy saved</div>
+                <div class="timeline-action">100+ million exclusive customers generating $2+ billion annual revenue</div>
             </div>
         </div>
     </div>
 
-    <div class="coalition-section">
-        <div class="section-title">🌍 GLOBAL COALITION READY NOW</div>
+    <div class="customers-section">
+        <div class="section-title">🎯 YOUR CUSTOMER BASE</div>
         <div style="text-align: center; font-size: 1.4em; margin-bottom: 40px; color: white;">
-            <strong>VHIERSMovement:</strong> Resistance movements worldwide + gig/union workers + everyone fighting Kings, DOGE, WAR, and mass extermination
+            <strong>VHIERSMovement:</strong> Ready coalition of Americans who will become Cost Plus customers exclusively + permanently
         </div>
         
-        <div class="coalition-grid">
-            <div class="coalition-card">
-                <div class="coalition-number">100M+</div>
-                <div class="coalition-label">Americans Ready</div>
+        <div class="customers-grid">
+            <div class="customer-card">
+                <div class="customer-number">150M</div>
+                <div class="customer-label">CMS Recipients</div>
             </div>
-            <div class="coalition-card">
-                <div class="coalition-number">73M</div>
-                <div class="coalition-label">Gig Workers</div>
+            <div class="customer-card">
+                <div class="customer-number">73M</div>
+                <div class="customer-label">Gig Workers</div>
             </div>
-            <div class="coalition-card">
-                <div class="coalition-number">50M+</div>
-                <div class="coalition-label">Resistance Movements</div>
+            <div class="customer-card">
+                <div class="customer-number">20M</div>
+                <div class="customer-label">Veterans</div>
             </div>
-            <div class="coalition-card">
-                <div class="coalition-number">47K</div>
-                <div class="coalition-label">Already Committed</div>
+            <div class="customer-card">
+                <div class="customer-number">14M</div>
+                <div class="customer-label">Union Members</div>
+            </div>
+            <div class="customer-card">
+                <div class="customer-number">47K</div>
+                <div class="customer-label">Already Committed</div>
+            </div>
+            <div class="customer-card">
+                <div class="customer-number">100%</div>
+                <div class="customer-label">Exclusive Loyalty</div>
             </div>
         </div>
         
         <div style="background: rgba(0,0,0,0.2); padding: 30px; border-radius: 15px; margin: 40px auto; max-width: 800px;">
             <div style="font-size: 1.3em; font-weight: bold; color: white; margin-bottom: 20px;">
-                💪 THE CUSTOMER ARMY ADVANTAGE
+                💪 THE CUSTOMER LOYALTY ADVANTAGE
             </div>
             <div style="font-size: 1.1em; color: #f0fff4; line-height: 1.6;">
-                Your customers become your army - <strong>defending your platform with their lives because it IS their lifeline.</strong>
-                100+ million Americans who will vote, fight, and spend exclusively through Cost Plus because you're not just their vendor - you're their pathway to economic freedom and survival.
+                Your customers become your advocates - <strong>defending Cost Plus with their votes and wallets because it's their lifeline.</strong>
+                100+ million Americans who will spend exclusively through Cost Plus because you're not just their vendor - you're their pathway to affordable healthcare and economic stability.
             </div>
         </div>
     </div>
 
-    <div class="partnership-section">
-        <div class="section-title">🤝 THE PARTNERSHIP</div>
-        <div class="offer-box">
-            <div class="offer-title">SIMPLE ASK</div>
-            <div class="offer-amount">$50K</div>
-            <div class="offer-details">
-                <strong>+ PHEIRS.org Partnership</strong><br>
+    <div class="deal-section">
+        <div class="section-title">🤝 THE SIMPLE DEAL</div>
+        <div class="deal-box">
+            <div class="deal-title">PARTNERSHIP INVESTMENT</div>
+            <div class="deal-amount">$50K</div>
+            <div class="deal-details">
+                <strong>+ PHEIRS.org Marketing Partnership</strong><br>
                 = Customer Acquisition Platform (Already Built, Ready to Deploy)
             </div>
             
             <div class="roi-highlight">
                 <div style="font-size: 1.8em; font-weight: bold; color: white; margin-bottom: 15px;">
-                    🚀 WHAT THIS DELIVERS
+                    🚀 YOUR RETURN ON INVESTMENT
                 </div>
                 <div style="font-size: 1.2em; color: #f7fafc; line-height: 1.5;">
-                    • <strong>100+ million exclusive, loyal customers</strong><br>
-                    • <strong>$2+ billion annual revenue</strong><br>
-                    • <strong>40,000x ROI</strong><br>
-                    • <strong>Largest customer coalition in American history</strong><br>
-                    • <strong>Proof democratic capitalism beats authoritarian destruction</strong>
+                    • <strong>100+ million exclusive customers</strong><br>
+                    • <strong>$2+ billion annual revenue for Cost Plus</strong><br>
+                    • <strong>40,000x ROI on $50K investment</strong><br>
+                    • <strong>Largest customer base in business history</strong><br>
+                    • <strong>First-mover advantage in cooperative healthcare</strong>
                 </div>
             </div>
             
             <div style="font-size: 1.1em; margin-top: 25px; color: #f7fafc;">
-                VHIERSMovement.com partnership connects you to global resistance network reaching 100+ million Americans desperate for alternatives to a system that's abandoned them.
+                VHIERSMovement.com connects Cost Plus to ready customers through our coalition of resistance movements, gig workers, and everyone seeking healthcare alternatives.
             </div>
         </div>
     </div>
 
-    <div class="choice-section">
-        <div class="choice-title">⚖️ THE CHOICE THAT DEFINES AMERICAN HISTORY</div>
-        
-        <div class="choice-grid">
-            <div class="choice-option choice-bad">
-                <h4>😴 OPTION 1</h4>
-                <div style="font-size: 1.2em; color: #f7fafc; line-height: 1.5;">
-                    Continue building Cost Plus incrementally while DOGE and Project 2025 systematically destroy the economy around you.
-                    <br><br>
-                    <strong style="color: #fc8181;">Watch democracy die while you have incremental growth.</strong>
-                </div>
-            </div>
-            
-            <div class="choice-option choice-good">
-                <h4>🔥 OPTION 2</h4>
-                <div style="font-size: 1.2em; color: #f7fafc; line-height: 1.5;">
-                    Partner with VHIERSMovement to grow your platform into the force that proves democratic solutions defeat authoritarian destruction.
-                    <br><br>
-                    <strong style="color: #68d391;">$2+ billion revenue while saving American democracy.</strong>
-                </div>
+    <div class="revenue-section">
+        <div class="section-title">📈 YOUR REVENUE GROWTH</div>
+        <div class="chart-container">
+            <h3 style="text-align: center; color: #2d3748; font-size: 1.7em; margin-bottom: 20px;">
+                Cost Plus Revenue Explosion Through VHIERSMovement Partnership
+            </h3>
+            <div class="chart-wrapper">
+                <canvas id="revenueChart"></canvas>
             </div>
         </div>
         
-        <div style="background: rgba(229, 62, 62, 0.3); padding: 30px; border-radius: 15px; margin: 40px auto; max-width: 800px; border: 2px solid #e53e3e;">
-            <div style="font-size: 1.4em; font-weight: bold; color: #fc8181; text-align: center;">
-                🚨 THE WINDOW IS THIS WEEK 🚨
+        <div style="background: rgba(43, 119, 173, 0.2); padding: 30px; border-radius: 15px; margin: 40px auto; max-width: 800px; border: 2px solid #2b77ad;">
+            <div style="font-size: 1.4em; font-weight: bold; color: #63b3ed; text-align: center; margin-bottom: 20px;">
+                📊 THE BUSINESS MATH
             </div>
-            <div style="font-size: 1.1em; color: white; text-align: center; margin-top: 15px;">
-                Congress returns September 3rd. Every day we wait, the leverage decreases. The political momentum requires ACTION NOW.
+            <div style="color: white; font-size: 1.1em; line-height: 1.6;">
+                <p><strong>Conservative Scenario:</strong> 25% adoption = 100M customers × $20/month average = $24B annual volume</p>
+                <p><strong>Cost Plus Revenue Share:</strong> 10% margin = $2.4B annual revenue</p>
+                <p><strong>ROI on $50K:</strong> 48,000x return within 12 months</p>
+                <p><strong>Customer Lifetime Value:</strong> Exclusive loyalty = multi-decade revenue stream</p>
             </div>
         </div>
     </div>
 
-    <div class="cta-section">
-        <div class="cta-title">🚨 YOUR DECISION NEEDED</div>
-        <div class="cta-urgent">THIS WEEK • CONGRESS IS HOME • PERFECT LEVERAGE</div>
+    <div class="action-section">
+        <div class="action-title">🎯 SEIZE THIS MOMENT</div>
+        <div class="action-urgent">CONGRESS HOME THIS WEEK • PERFECT LEVERAGE • READY CUSTOMERS</div>
         
-        <div class="action-box">
+        <div class="contact-box">
             <div class="forward-text">
-                FORWARD THIS TO MARK CUBAN
+                FORWARD THIS OPPORTUNITY TO MARK CUBAN
             </div>
             <div class="email-highlight">
                 mcuban@gmail.com
             </div>
             <div style="font-size: 1.2em; margin: 25px 0; color: #f7fafc; line-height: 1.5;">
-                <strong>Will you partner with PHIERS.org as your largest marketing coalition,</strong> connecting resistance movements worldwide, gig/union workers, and everyone fighting against Kings, DOGE, WAR, and mass extermination?
+                <strong>Will you partner with PHEIRS.org</strong> to turn our ready coalition into your largest customer acquisition in business history?
             </div>
             
             <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 12px; margin: 25px 0;">
                 <div style="font-size: 1.1em; color: #f7fafc; text-align: center;">
-                    <strong>100 million Americans are waiting for Mark Cuban's answer.</strong><br><br>
-                    Together we fight. Together we win. Together we prove democratic capitalism beats authoritarian destruction.
+                    <strong>100 million Americans are ready to become Cost Plus customers exclusively.</strong><br><br>
+                    $50K investment + VHIERSMovement partnership = $2+ billion revenue opportunity.<br><br>
+                    <strong>The timing is perfect. The customers are ready. The opportunity is historic.</strong>
                 </div>
             </div>
             
             <div style="font-size: 1.3em; font-weight: bold; margin-top: 30px;">
                 <a href="https://docs.google.com/document/d/1eV9PUIJFnRattAvy9C8Ya7LuCPSCFrs6ewmxgqlPT4g/edit?usp=sharing" target="_blank" style="color: #63b3ed; text-decoration: none;">
-                    📋 COMPLETE STRATEGY & VALIDATION →
+                    📋 COMPLETE BUSINESS PLAN & VALIDATION →
                 </a>
             </div>
         </div>
     </div>
 
     <script>
-        // Add dynamic countdown or other interactive elements if needed
+        window.addEventListener('load', function() {
+            // Revenue Growth Chart
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Launch', 'Month 1', 'Month 3', 'Month 6', 'Month 9', 'Month 12', 'Month 18', 'Month 24'],
+                    datasets: [{
+                        label: 'Cost Plus Revenue ($B)',
+                        data: [0, 0.2, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0],
+                        borderColor: '#2b77ad',
+                        backgroundColor: 'rgba(43, 119, 173, 0.2)',
+                        borderWidth: 4,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#2b77ad',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointRadius: 8
+                    }, {
+                        label: 'Customer Base (Millions)',
+                        data: [0, 5, 25, 50, 75, 100, 125, 150],
+                        borderColor: '#38a169',
+                        backgroundColor: 'rgba(56, 161, 105, 0.2)',
+                        borderWidth: 4,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#38a169',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 3,
+                        pointRadius: 8,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: { font: { size: 14, weight: 'bold' }, color: '#2d3748' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Revenue ($B)', color: '#2b77ad', font: { size: 14, weight: 'bold' }},
+                            ticks: { color: '#2d3748', callback: function(value) { return '$' + value + 'B'; }}
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            beginAtZero: true,
+                            title: { display: true, text: 'Customers (Millions)', color: '#38a169', font: { size: 14, weight: 'bold' }},
+                            ticks: { color: '#2d3748', callback: function(value) { return value + 'M'; }},
+                            grid: { drawOnChartArea: false }
+                        },
+                        x: {
+                            title: { display: true, text: 'Growth Timeline', color: '#2d3748', font: { size: 14, weight: 'bold' }},
+                            ticks: { color: '#2d3748' }
+                        }
+                    }
+                }
+            });
+        });
+
+        // Add interactive elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Flash effect for urgent elements
-            const urgentElements = document.querySelectorAll('.crisis-alert, .countdown-box, .offer-box');
-            urgentElements.forEach(el => {
+            const opportunityElements = document.querySelectorAll('.opportunity-alert, .window-box, .deal-box');
+            opportunityElements.forEach(el => {
                 el.addEventListener('mouseenter', function() {
                     this.style.transform = 'scale(1.02)';
                 });
